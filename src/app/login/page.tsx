@@ -8,9 +8,13 @@ import { ShieldCheck, Eye, EyeOff, Loader2 } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 export default function LoginPage() {
-    const { login, isLoading, isAuthenticated } = useAuthStore();
+    const { login, isLoading, isAuthenticated, checkAuth } = useAuthStore();
     const router = useRouter();
     const [showPassword, setShowPassword] = useState(false);
+
+    useEffect(() => {
+        checkAuth();
+    }, [checkAuth]);
 
     useEffect(() => {
         if (isAuthenticated) {

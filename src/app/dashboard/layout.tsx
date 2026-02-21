@@ -12,7 +12,7 @@ export default function DashboardLayout({
 }: {
     children: React.ReactNode;
 }) {
-    const { logout, user, isAuthenticated, isLoading, checkAuth } = useAuthStore();
+    const { logout, user, isAuthenticated, isCheckingAuth, checkAuth } = useAuthStore();
     const router = useRouter();
     const pathname = usePathname();
 
@@ -21,17 +21,17 @@ export default function DashboardLayout({
     }, [checkAuth]);
 
     useEffect(() => {
-        if (!isLoading && !isAuthenticated) {
+        if (!isCheckingAuth && !isAuthenticated) {
             router.push('/login');
         }
-    }, [isLoading, isAuthenticated, router]);
+    }, [isCheckingAuth, isAuthenticated, router]);
 
     const handleLogout = async () => {
         await logout();
         router.push('/login');
     };
 
-    if (isLoading) {
+    if (isCheckingAuth) {
         return (
             <div className="flex justify-center items-center h-screen bg-slate-950">
                 <Loader2 className="animate-spin text-orange-500 w-12 h-12" />
