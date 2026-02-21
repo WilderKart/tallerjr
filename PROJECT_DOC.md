@@ -18,15 +18,19 @@ Plataforma SaaS profesional para la gestión integral de talleres de motocicleta
 - **Administración**: Gestión de usuarios y roles (Admin, Mecánico, Cajero).
 
 ## 3. Arquitectura General
-- **Modelo**: Client-Server (Frontend y Backend desacoplados).
-- **Frontend**: SPA con React, Vite y TailwindCSS.
-- **Backend**: API RESTful con Node.js, Express y Prisma.
-- **Base de Datos**: PostgreSQL.
-- **Seguridad**: Zero Trust, JWT, Middleware RBAC.
+- **Frontend/Backend**: Next.js 15 (App Router) - Unificado.
+- **Estilos**: TailwindCSS (v4 compatible).
+- **Base de Datos**: PostgreSQL con Prisma ORM.
+- **Seguridad**: Zero Trust, HttpOnly Cookies, Middleware Next.js.
 
 ## 4. Stack Tecnológico
-- **Frontend**: React 18, Zustand, TailwindCSS, Axios, React Router DOM, Recharts.
-- **Backend**: Node.js 20+, Express, Prisma ORM, JWT, Bcrypt, Zod.
+- **Framework**: Next.js 15 (React 19)
+- **Estado Global**: Zustand
+- **Estilos**: TailwindCSS (v4 compatible)
+- **ORM**: Prisma ORM
+- **Validación**: Zod
+- **Autenticación**: NextAuth.js (Auth.js)
+- **Base de Datos**: PostgreSQL
 - **Infraestructura**: (Pendiente de definición para deploy).
 
 ## 5. Reglas de Seguridad (Zero Trust)
